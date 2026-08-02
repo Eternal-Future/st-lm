@@ -1,0 +1,55 @@
+dataRoot: ./data
+
+listen: true
+
+listenAddress:
+  ipv4: 0.0.0.0
+  ipv6: "[::]"
+
+protocol:
+  ipv4: true
+  ipv6: false
+
+port: 8000
+
+browserLaunch:
+  enabled: false
+
+# Northflank 公网访问不能使用本地 IP 白名单
+whitelistMode: false
+
+# 不使用 HTTP Basic Auth
+basicAuthMode: false
+perUserBasicAuth: false
+
+# 使用 SillyTavern 内置账户
+enableUserAccounts: true
+enableDiscreetLogin: true
+
+sessionTimeout: 86400
+securityOverride: false
+
+# 防止 SillyTavern 请求局域网地址
+privateAddressWhitelist:
+  enabled: true
+  allowUnresolvedHosts: false
+  log:
+    blockedRequests: true
+    allowedRequests: false
+  allowedRanges:
+    - "127.0.0.0/8"
+    - "::1/128"
+
+# 512MB 内存优化
+performance:
+  memoryCacheCapacity: "0"
+  useDiskCache: true
+
+extensions:
+  enabled: true
+  autoUpdate: false
+  models:
+    autoDownload: false
+
+enableDownloadableTokenizers: false
+enableServerPlugins: false
